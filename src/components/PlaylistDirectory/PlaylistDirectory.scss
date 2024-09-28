@@ -1,0 +1,10 @@
+.playlist-list {
+  border: 1px solid #edebe1;
+  margin: 16px 0px;
+  border-radius: 8px;
+  background-color: #f7f6f2;
+
+  &-item:nth-last-child(n + 2) {
+    border-bottom: 1px solid #edebe1;
+  }
+}

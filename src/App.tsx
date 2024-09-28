@@ -1,35 +1,27 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Button, Container, Grid2, Paper } from "@mui/material";
+import AddIcon from "@mui/icons-material/Add";
+import PlaylistDirectory from "./components/PlaylistDirectory";
+import "./App.scss";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <Container disableGutters maxWidth="xl" sx={{ height: "100vh" }}>
+      <Grid2 container height="100%">
+        <Grid2
+          component={Paper}
+          elevation={8}
+          size={3}
+          sx={{ borderRight: "red", p: 2 }}
+        >
+          <Button startIcon={<AddIcon />} variant="outlined" fullWidth>
+            Add Playlist
+          </Button>
+          <PlaylistDirectory />
+        </Grid2>
+        <Grid2 size={9} sx={{ bgcolor: "" }}></Grid2>
+      </Grid2>
+    </Container>
+  );
 }
 
-export default App
+export default App;
