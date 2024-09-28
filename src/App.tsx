@@ -1,5 +1,4 @@
-import { Button, Container, Grid2, Paper } from "@mui/material";
-import AddIcon from "@mui/icons-material/Add";
+import { Container, Grid2, Paper } from "@mui/material";
 import PlaylistDirectory from "./components/PlaylistDirectory";
 import "./App.scss";
 
@@ -9,13 +8,10 @@ function App() {
       <Grid2 container height="100%">
         <Grid2
           component={Paper}
-          elevation={8}
+          elevation={4}
           size={3}
           sx={{ borderRight: "red", p: 2 }}
         >
-          <Button startIcon={<AddIcon />} variant="outlined" fullWidth>
-            Add Playlist
-          </Button>
           <PlaylistDirectory />
         </Grid2>
         <Grid2 size={9} sx={{ bgcolor: "" }}></Grid2>
