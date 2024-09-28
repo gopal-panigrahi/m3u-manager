@@ -10,16 +10,16 @@ import PlaylistAddIcon from "@mui/icons-material/PlaylistAdd";
 import PlaylistIcon from "@mui/icons-material/QueueMusicRounded";
 import "./PlaylistDirectory.scss";
 import { useAppDispatch, useAppSelector } from "../../context/hooks";
-import { addPlaylist } from "../../context/playlist.context";
+import { openNewPlaylistModal } from "../../context/modal.context";
 
 function PlaylistDirectory() {
-  // global state
   const { items } = useAppSelector((state) => state.playlist);
   const dispatch = useAppDispatch();
 
   function addNewPlaylist() {
-    const id = crypto.randomUUID();
-    dispatch(addPlaylist({ id, name: id }));
+    dispatch(openNewPlaylistModal(true));
+    // const id = crypto.randomUUID();
+    // dispatch(addPlaylist({ id, name: id }));
   }
 
   return (

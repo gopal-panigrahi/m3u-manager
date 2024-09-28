@@ -1,4 +1,3 @@
-import playlistReducer from "./playlist.context";
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import {
   FLUSH,
@@ -11,9 +10,12 @@ import {
   REHYDRATE,
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
+import playlistReducer from "./playlist.context";
+import modalReducer from "./modal.context";
 
 const rootReducer = combineReducers({
   playlist: playlistReducer,
+  modal: modalReducer,
 });
 
 type RootReducer = ReturnType<typeof rootReducer>;
